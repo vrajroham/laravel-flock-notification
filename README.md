@@ -1,9 +1,9 @@
 # Laravel Flock Notification Channel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/laravel-flock-notification.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/laravel-flock-notification)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/vrajroham/laravel-flock-notification.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/laravel-flock-notification)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/vrajroham/laravel-flock-notification/master.svg?style=flat-square)](https://travis-ci.org/vrajroham/laravel-flock-notification)
-[![StyleCI](https://styleci.io/repos/126339390/shield)](https://styleci.io/repos/126339390)
+[![StyleCI](https://styleci.io/repos/127184015/shield)](https://styleci.io/repos/127184015)
 [![SensioLabsInsight](https://img.shields.io/sensiolabs/i/30787cc0-f834-4cf7-88e1-6b9a5311a091.svg?style=flat-square)](https://insight.sensiolabs.com/projects/30787cc0-f834-4cf7-88e1-6b9a5311a091)
 [![Quality Score](https://img.shields.io/scrutinizer/g/vrajroham/laravel-flock-notification.svg?style=flat-square)](https://scrutinizer-ci.com/g/vrajroham/laravel-flock-notification)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/vrajroham/laravel-flock-notification/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/vrajroham/laravel-flock-notification/?branch=master)
