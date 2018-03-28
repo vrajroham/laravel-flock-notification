@@ -7,7 +7,7 @@
 [![SensioLabsInsight](https://img.shields.io/sensiolabs/i/30787cc0-f834-4cf7-88e1-6b9a5311a091.svg?style=flat-square)](https://insight.sensiolabs.com/projects/30787cc0-f834-4cf7-88e1-6b9a5311a091)
 [![Quality Score](https://img.shields.io/scrutinizer/g/vrajroham/laravel-flock-notification.svg?style=flat-square)](https://scrutinizer-ci.com/g/vrajroham/laravel-flock-notification)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/vrajroham/laravel-flock-notification/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/vrajroham/laravel-flock-notification/?branch=master)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/laravel-flock-notification.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/laravel-flock-notification)
+[![Total Downloads](https://img.shields.io/packagist/dt/vrajroham/laravel-flock-notification.svg?style=flat-square)](https://packagist.org/packages/vrajroham/laravel-flock-notification)
 
 This package makes it easy to send notifications using [Flock](https://flock.com/) with Laravel 5.3+.
 
