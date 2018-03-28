@@ -75,7 +75,7 @@ class OderCreated extends Notification
     {
         return FlockMessage::create()
             ->content('Order created')
-            ->attachment(function ($attachment) {
+            ->attachments(function ($attachment) {
                 $attachment->title('View order')
                     ->description('Order description')
                     ->color('#fff000');
@@ -89,7 +89,7 @@ class OderCreated extends Notification
 Complete message and attachment schema can be found at [Flock Message Object](https://docs.flock.com/display/flockos/Message) and [Flock Attachment Object](https://docs.flock.com/display/flockos/Attachment)
 
 - content(`$string`)  
-- flockml(`$string`)  
+- flockml(`$string`)  _//[FlockML](https://docs.flock.com/display/flockos/FlockML) as attachment_
 - notification(`$string`)  
 - sendAs(`$senderName`, `$profileImageUrl`)  
 - attachments(`callback`)
@@ -102,7 +102,7 @@ Complete message and attachment schema can be found at [Flock Message Object](ht
     + views(`callback`)
         * widget(`$source`, `$height`, `$width`) 
         * html(`$inlineHtmlString`, `$height`, `$width`) 
-        * flockml(`$flockMLString`) _//[FlockML](https://docs.flock.com/display/flockos/FlockML) as attachment_
+        * flockml(`$flockMLString`)
         * image(`callback`)
             - original(`$url`, `$height`, `$width`) 
             - thumbnail(`$url`, `$height`, `$width`) 
