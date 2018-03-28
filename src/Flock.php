@@ -50,7 +50,6 @@ class Flock
     protected function sendRequest($endpoint, $params)
     {
         try {
-
             return $this->httpClient()->post($endpoint, [
                 'json' => $params,
             ]);

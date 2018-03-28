@@ -4,8 +4,8 @@ namespace Vrajroham\LaravelFlockNotification\Tests;
 
 use Mockery;
 use PHPUnit\Framework\TestCase;
-use Vrajroham\LaravelFlockNotification\Flock;
 use Illuminate\Notifications\Notification;
+use Vrajroham\LaravelFlockNotification\Flock;
 use Vrajroham\LaravelFlockNotification\FlockChannel;
 use Vrajroham\LaravelFlockNotification\FlockMessage;
 use Vrajroham\LaravelFlockNotification\Exceptions\CouldNotSendNotification;

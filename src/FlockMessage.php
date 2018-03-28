@@ -2,8 +2,8 @@
 
 namespace Vrajroham\LaravelFlockNotification;
 
-use NotificationChannels\LaravelFlockNotification\Exceptions\CouldNotSendNotification;
 use Closure;
+use NotificationChannels\LaravelFlockNotification\Exceptions\CouldNotSendNotification;
 
 class FlockMessage
 {
@@ -61,7 +61,7 @@ class FlockMessage
     }
 
     /**
-     * Text to be shown as the message's notification. (Default is text.)
+     * Text to be shown as the message's notification. (Default is text.).
      *
      * @param string $notification
      *
@@ -85,7 +85,7 @@ class FlockMessage
      */
     public function sendAs($name, $profileImage = null)
     {
-        if (!is_string($name)) {
+        if (! is_string($name)) {
             throw CouldNotSendNotification::flockMessageException('Name should be string in sendAs field');
         }
 
