@@ -4,7 +4,7 @@ namespace Vrajroham\LaravelFlockNotification;
 
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\ClientException;
-use Vrajroham\Flock\Exceptions\CouldNotSendNotification;
+use Vrajroham\LaravelFlockNotification\Exceptions\CouldNotSendNotification;
 
 class Flock
 {

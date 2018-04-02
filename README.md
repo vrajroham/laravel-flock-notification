@@ -27,6 +27,7 @@ return FlockMessage::create()
     - [Setting up the Flock service](#setting-up-the-flock-service)
 - [Usage](#usage)
 	- [Available Message methods](#available-message-methods)
+- [Examples](#examples)
 - [Changelog](#changelog)
 - [Testing](#testing)
 - [Security](#security)
@@ -56,6 +57,15 @@ For more information see the [flock documentation](https://docs.flock.com/displa
 ## Usage
 
 You can now send messages in Flock Group by creating a FlockMessage:
+
+- Add `routeNotificationForFlock()` to `App\User` model
+
+```php
+public function routeNotificationForFlock()
+{
+    return $this->flock_webhook_url;
+}
+```
 
 ```php
 <?php
@@ -139,6 +149,156 @@ Complete message and attachment schema can be found at [Flock Message Object](ht
         ```
 
 
+## Examples
+
+#### Text as contents
+
+![Imgur](https://i.imgur.com/VmCK2Nf.png)
+
+```php
+public function toFlock($notifiable)
+{
+    return FlockMessage::create()
+        ->content('This is text notification.');
+}
+```
+
+#### Change sender name and image
+
+![Imgur](https://i.imgur.com/aWtVutw.png)
+
+```php
+public function toFlock($notifiable)
+{
+    return FlockMessage::create()
+        ->content('This is text notification.')
+        ->sendAs("Vaibhavraj", 'https://avatars1.githubusercontent.com/u/12662173?s=460&v=4');
+}
+```
+
+#### Change message color
+
+![Imgur](https://i.imgur.com/P3OdnmO.png)
+
+```php
+public function toFlock($notifiable)
+{
+    return FlockMessage::create()
+        ->attachments(function ($attachment){
+                $attachment->title('This is error message.')
+                ->color('#FF0000'); //Red
+            });
+}
+```
+
+#### Change notification text for mobile application
+
+![Imgur](https://i.imgur.com/LIpd1Zo.png)
+
+```php
+public function toFlock($notifiable)
+{
+    return FlockMessage::create()
+        ->notification('You have important message')
+        ->content('This is text notification.');
+}
+```
+
+####  Website as widget
+
+![Imgur](https://i.imgur.com/XlTVGfK.png)
+
+```php
+public function toFlock($notifiable)
+{
+    return FlockMessage::create()
+        ->attachments(function ($attachment){
+                $attachment->title('Website as widget')
+                ->views(function ($view){
+                        $view->widget('https://vrajroham.me', 400, 400);
+                    });
+            });
+}
+```
+
+
+#### Buttons
+
+![Imgur](https://i.imgur.com/95Ss9eF.png)
+
+```php
+public function toFlock($notifiable)
+{
+    return FlockMessage::create()
+        ->attachments(function ($attachment){
+                $attachment->title('This are the buttons')
+                ->buttons([
+                    [
+                        'name' => 'Button 1',
+                        'icon' => 'https://avatars1.githubusercontent.com/u/12662173?s=460&v=4',
+                        'action' => [
+                                'type' => 'openBrowser',
+                                'url' => 'https://github.com/vrajroham',
+                            ],
+                        'id' => 'btn1'
+                    ],
+                    [
+                        'name' => 'Button 2',
+                        'icon' => 'https://laravel.com/favicon.png',
+                        'action' => [
+                                'type' => 'openBrowser',
+                                'url' => 'https://laravel.com',
+                            ],
+                        'id' => 'btn2'
+                    ]
+                ]);
+        });
+}
+```
+
+#### Image as attachment
+
+![Imgur](https://i.imgur.com/IIyN5Ns.png)
+
+```php
+public function toFlock($notifiable)
+{
+    return FlockMessage::create()
+        ->attachments(function ($attachment) {
+             $attachment->title('Image as attachment')
+             ->views(function ($view) {
+                 $view->image(function ($image)
+                 {
+                     $image->original('https://avatars1.githubusercontent.com/u/12662173?s=460&v=4',400,400)
+                     ->thumbnail('https://avatars1.githubusercontent.com/u/12662173?s=460&v=4',100,100)
+                     ->filename('vaibhavraj.png');
+                 });
+             });
+         });
+}
+```
+
+#### Download Link
+
+![Imgur](https://i.imgur.com/42Wbnsz.png)
+
+```php
+public function toFlock($notifiable)
+{
+    return FlockMessage::create()
+        ->attachments(function ($attachment) {
+             $attachment->title('Download link')
+             ->downloads([
+                [
+                    'src' => 'https://vrajroham.me/dl/vrajroham_cv.pdf',
+                    'mime' => 'application/pdf',
+                    'filename' => 'file-1.pdf',
+                    'size' => 1500
+                ],
+             ]);
+         });
+}
+```
 
 ## Changelog
 
