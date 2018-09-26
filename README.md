@@ -42,7 +42,7 @@ Install this package with Composer:
 
     composer require vrajroham/laravel-flock-notification
     
-Register the ServiceProvider in your config/app.php:
+Register the ServiceProvider in your config/app.php (If you are using Laravel < 5.5):
 
     Vrajroham\LaravelFlockNotification\FlockServiceProvider::class,
 
