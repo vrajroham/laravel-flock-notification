@@ -1,7 +1,7 @@
 {
     "name": "vrajroham/laravel-flock-notification",
     "description": "Laravel Flock Notification Channel",
-    "homepage": "https://github.com/laravel-notification-channels/flock",
+    "homepage": "https://github.com/vrajroham/laravel-flock-notification",
     "license": "MIT",
     "authors": [
         {
@@ -13,12 +13,12 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "illuminate/notifications": "5.5.* || 5.6.*",
-        "illuminate/support": "5.5.* || 5.6.*"
+        "illuminate/notifications": "5.5.* || 5.6.* || 5.7.*",
+        "illuminate/support": "5.5.* || 5.6.* || 5.7.*"
     },
     "require-dev": {
         "mockery/mockery": "dev-master",
-        "phpunit/phpunit": "5.*|~6.0"
+        "phpunit/phpunit": "5.*|6.*|7.*|8.*"
     },
     "autoload": {
         "psr-4": {
