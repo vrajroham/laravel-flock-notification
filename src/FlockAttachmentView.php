@@ -39,7 +39,7 @@ class FlockAttachmentView
     /**
      * Create an widget.
      *
-     * @param   string   $src
+     * @param string   $src
      * @param int|null $height
      * @param int|null $width
      *
@@ -47,17 +47,17 @@ class FlockAttachmentView
      */
     public function widget($src, $height = null, $width = null)
     {
-        if (! filter_var($src, FILTER_VALIDATE_URL)) {
+        if (!filter_var($src, FILTER_VALIDATE_URL)) {
             throw CouldNotSendNotification::flockAttachmentViewWidgetException('Source of widget in attachment is missing or invalid.');
         }
         $this->widget['src'] = $src;
 
-        if (! filter_var($height, FILTER_VALIDATE_INT) || $height <= 0) {
+        if (!filter_var($height, FILTER_VALIDATE_INT) || $height <= 0) {
             throw CouldNotSendNotification::flockAttachmentViewWidgetException('Height of widget in attachment is missing or invalid.');
         }
         $this->widget['height'] = $height;
 
-        if (! filter_var($width, FILTER_VALIDATE_INT) || $width <= 0) {
+        if (!filter_var($width, FILTER_VALIDATE_INT) || $width <= 0) {
             throw CouldNotSendNotification::flockAttachmentViewWidgetException('Width of widget in attachment is missing or invalid.');
         }
         $this->widget['width'] = $width;
@@ -66,7 +66,7 @@ class FlockAttachmentView
     }
 
     /**
-     * @param  string    $inline
+     * @param string   $inline
      * @param int|null $height
      * @param int|null $width
      *
@@ -76,12 +76,12 @@ class FlockAttachmentView
     {
         $this->html['inline'] = $inline;
 
-        if (! filter_var($height, FILTER_VALIDATE_INT) || $height <= 0) {
+        if (!filter_var($height, FILTER_VALIDATE_INT) || $height <= 0) {
             throw CouldNotSendNotification::flockAttachmentViewHtmlException('Height of inline html in attachment is missing or invalid.');
         }
         $this->html['height'] = $height;
 
-        if (! filter_var($width, FILTER_VALIDATE_INT) || $width <= 0) {
+        if (!filter_var($width, FILTER_VALIDATE_INT) || $width <= 0) {
             throw CouldNotSendNotification::flockAttachmentViewHtmlException('Width of inline html in attachment is missing or invalid.');
         }
         $this->html['width'] = $width;
@@ -106,12 +106,13 @@ class FlockAttachmentView
     /**
      * Define an image for the attachment.
      *
-     * @param  \Closure  $callback
+     * @param \Closure $callback
+     *
      * @return $this
      */
     public function image(Closure $callback)
     {
-        $this->image = $i = new FlockAttachmentViewImage;
+        $this->image = $i = new FlockAttachmentViewImage();
 
         $callback($i);
 

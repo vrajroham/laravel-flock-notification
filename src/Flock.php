@@ -33,8 +33,9 @@ class Flock
      * @param $url
      * @param $params
      *
-     * @return \Psr\Http\Message\ResponseInterface
      * @throws CouldNotSendNotification
+     *
+     * @return \Psr\Http\Message\ResponseInterface
      */
     public function sendMessage($url, $params)
     {

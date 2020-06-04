@@ -2,13 +2,13 @@
 
 namespace Vrajroham\LaravelFlockNotification\Tests;
 
+use Illuminate\Notifications\Notification;
 use Mockery;
 use PHPUnit\Framework\TestCase;
-use Illuminate\Notifications\Notification;
+use Vrajroham\LaravelFlockNotification\Exceptions\CouldNotSendNotification;
 use Vrajroham\LaravelFlockNotification\Flock;
 use Vrajroham\LaravelFlockNotification\FlockChannel;
 use Vrajroham\LaravelFlockNotification\FlockMessage;
-use Vrajroham\LaravelFlockNotification\Exceptions\CouldNotSendNotification;
 
 class FlockChannelTest extends TestCase
 {
@@ -29,7 +29,7 @@ class FlockChannelTest extends TestCase
     public function it_can_send_a_message()
     {
         $this->flock->shouldReceive('sendMessage')->with('url', [
-                'text' => 'Laravel Notification Channel for flock!',
+            'text' => 'Laravel Notification Channel for flock!',
         ]);
         $this->channel->send(new TestNotifiable(), new TestNotification());
     }

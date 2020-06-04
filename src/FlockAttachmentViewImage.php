@@ -30,7 +30,7 @@ class FlockAttachmentViewImage
     /**
      * Attach origin al image to attachment.
      *
-     * @param string $src
+     * @param string   $src
      * @param int|null $height
      * @param int|null $width
      *
@@ -38,17 +38,17 @@ class FlockAttachmentViewImage
      */
     public function original($src, $height, $width)
     {
-        if (! filter_var($src, FILTER_VALIDATE_URL)) {
+        if (!filter_var($src, FILTER_VALIDATE_URL)) {
             throw CouldNotSendNotification::flockAttachmentViewImageException('Source of image in attachment is missing or invalid.');
         }
         $this->original['src'] = $src;
 
-        if (! filter_var($height, FILTER_VALIDATE_INT) or $height <= 0) {
+        if (!filter_var($height, FILTER_VALIDATE_INT) or $height <= 0) {
             throw CouldNotSendNotification::flockAttachmentViewImageException('Height of image in attachment is missing or invalid.');
         }
         $this->original['height'] = $height;
 
-        if (! filter_var($width, FILTER_VALIDATE_INT) or $width <= 0) {
+        if (!filter_var($width, FILTER_VALIDATE_INT) or $width <= 0) {
             throw CouldNotSendNotification::flockAttachmentViewImageException('Width of image in attachment is missing or invalid.');
         }
         $this->original['width'] = $width;
@@ -59,7 +59,7 @@ class FlockAttachmentViewImage
     /**
      * Attach thumbnail to attachment.
      *
-     * @param string $src
+     * @param string   $src
      * @param int|null $height
      * @param int|null $width
      *
@@ -67,17 +67,17 @@ class FlockAttachmentViewImage
      */
     public function thumbnail($src, $height, $width)
     {
-        if (! filter_var($src, FILTER_VALIDATE_URL)) {
+        if (!filter_var($src, FILTER_VALIDATE_URL)) {
             throw CouldNotSendNotification::flockAttachmentViewImageException('Source of image in attachment is missing or invalid.');
         }
         $this->thumbnail['src'] = $src;
 
-        if (! filter_var($height, FILTER_VALIDATE_INT) or $height <= 0) {
+        if (!filter_var($height, FILTER_VALIDATE_INT) or $height <= 0) {
             throw CouldNotSendNotification::flockAttachmentViewImageException('Height of image in attachment is missing or invalid.');
         }
         $this->thumbnail['height'] = $height;
 
-        if (! filter_var($width, FILTER_VALIDATE_INT) or $width <= 0) {
+        if (!filter_var($width, FILTER_VALIDATE_INT) or $width <= 0) {
             throw CouldNotSendNotification::flockAttachmentViewImageException('Width of image in attachment is missing or invalid.');
         }
         $this->thumbnail['width'] = $width;
