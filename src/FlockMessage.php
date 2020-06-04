@@ -85,7 +85,7 @@ class FlockMessage
      */
     public function sendAs($name, $profileImage = null)
     {
-        if (! is_string($name)) {
+        if (!is_string($name)) {
             throw CouldNotSendNotification::flockMessageException('Name should be string in sendAs field');
         }
 
@@ -93,7 +93,7 @@ class FlockMessage
             throw CouldNotSendNotification::flockMessageException('Profile image URL in sendAs field');
         }
 
-        if (! filter_var($profileImage, FILTER_VALIDATE_URL)) {
+        if (!filter_var($profileImage, FILTER_VALIDATE_URL)) {
             throw CouldNotSendNotification::flockMessageException('Profile image URL is invalid');
         }
 
@@ -116,12 +116,13 @@ class FlockMessage
     /**
      * Define an attachment for the message.
      *
-     * @param  \Closure  $callback
+     * @param \Closure $callback
+     *
      * @return $this
      */
     public function attachments(Closure $callback)
     {
-        $this->payload['attachments'][] = $attachment = new FlockAttachment;
+        $this->payload['attachments'][] = $attachment = new FlockAttachment();
 
         $callback($attachment);
 
