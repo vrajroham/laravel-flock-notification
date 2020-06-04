@@ -27,7 +27,7 @@ class FlockChannel
     /**
      * Send the given notification.
      *
-     * @param mixed $notifiable
+     * @param mixed                                  $notifiable
      * @param \Illuminate\Notifications\Notification $notification
      *
      * @throws \NotificationChannels\Flock\Exceptions\CouldNotSendNotification
@@ -40,7 +40,7 @@ class FlockChannel
             $message = FlockMessage::create($message);
         }
 
-        if (! $notifiable->routeNotificationFor('flock')) {
+        if (!$notifiable->routeNotificationFor('flock')) {
             throw CouldNotSendNotification::flockRouteNotProvided();
         }
 

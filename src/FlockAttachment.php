@@ -82,7 +82,7 @@ class FlockAttachment
     /**
      * Set the id of attachment.
      *
-     * @param   string  $id
+     * @param string $id
      *
      * @return $this
      */
@@ -109,6 +109,7 @@ class FlockAttachment
 
     /**
      * Set description of attachment.
+     *
      * @param string $description
      *
      * @return $this
@@ -157,7 +158,7 @@ class FlockAttachment
      */
     public function forward($forward)
     {
-        if (! is_bool($forward)) {
+        if (!is_bool($forward)) {
             throw CouldNotSendNotification::flockAttachmentForwardException('Forward field should be boolean.');
         }
         $this->forward = $forward;
@@ -174,7 +175,7 @@ class FlockAttachment
      */
     public function url($url)
     {
-        if (! filter_var($url, FILTER_VALIDATE_URL)) {
+        if (!filter_var($url, FILTER_VALIDATE_URL)) {
             throw CouldNotSendNotification::flockAttachmentUrlException('Invalid URL in attachment');
         }
         $this->url = $url;
@@ -185,12 +186,13 @@ class FlockAttachment
     /**
      * Define an view for the attachment.
      *
-     * @param  \Closure  $callback
+     * @param \Closure $callback
+     *
      * @return $this
      */
     public function views(Closure $callback)
     {
-        $this->views = $view = new FlockAttachmentView;
+        $this->views = $view = new FlockAttachmentView();
 
         $callback($view);
 
@@ -200,13 +202,14 @@ class FlockAttachment
     /**
      * Define an downloads for the attachment.
      *
-     * @param  array $files
+     * @param array $files
+     *
      * @return $this
      */
     public function downloads($files)
     {
         foreach ($files as $key => $file) {
-            if (! filter_var($file['src'], FILTER_VALIDATE_URL)) {
+            if (!filter_var($file['src'], FILTER_VALIDATE_URL)) {
                 throw CouldNotSendNotification::flockAttachmentDownloadException('Invalid source for attachment download.');
             }
 
@@ -219,21 +222,22 @@ class FlockAttachment
     /**
      * Define an buttons for the attachment.
      *
-     * @param  array    $buttons
+     * @param array $buttons
+     *
      * @return $this
      */
     public function buttons($buttons)
     {
         foreach ($buttons as $key => $button) {
-            if (! filter_var($button['icon'], FILTER_VALIDATE_URL)) {
+            if (!filter_var($button['icon'], FILTER_VALIDATE_URL)) {
                 throw CouldNotSendNotification::flockAttachmentButtonException('Invalid Icon URL for attachment button.');
             }
 
-            if (! isset($button['action']) || ! is_array($button['action'])) {
+            if (!isset($button['action']) || !is_array($button['action'])) {
                 throw CouldNotSendNotification::flockAttachmentButtonException('Attachment button action is required and needs to be an array');
             }
 
-            if (! isset($button['action']['url']) || ! filter_var($button['action']['url'], FILTER_VALIDATE_URL)) {
+            if (!isset($button['action']['url']) || !filter_var($button['action']['url'], FILTER_VALIDATE_URL)) {
                 throw CouldNotSendNotification::flockAttachmentButtonException('Attachment button action url is invalid or missing.');
             }
 
