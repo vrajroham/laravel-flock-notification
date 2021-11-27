@@ -18,7 +18,7 @@ class FlockChannelTest extends TestCase
     /** @var \NotificationChannels\Flock\FlockChannel */
     protected $channel;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->flock = Mockery::mock(Flock::class);
